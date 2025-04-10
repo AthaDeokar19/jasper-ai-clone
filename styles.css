@@ -111,4 +111,128 @@
       padding: 12px 24px;
       font-size: 16px;
     }
+    /* Testimonials Section */
+.testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.testimonial p {
+  font-size: 18px;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.testimonial span {
+  font-size: 16px;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .testimonial {
+    width: 100%;
+    max-width: 350px;
   }
+}/* Testimonials Section */
+.testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.testimonial p {
+  font-size: 18px;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.testimonial span {
+  font-size: 16px;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .testimonial {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-section {
+  margin: 20px;
+}
+.footer-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.footer-section p {
+  font-size: 16px;
+  color: #ccc;
+}
+.footer-section ul {
+  list-style: none;
+}
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.footer-section a:hover {
+  color: #ff5733;
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
