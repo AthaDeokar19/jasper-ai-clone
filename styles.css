@@ -70,3 +70,45 @@
       margin-top: 10px;
     }
   }
+  /* Hero Section Styling */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa; /* Light gray like Jasper.ai */
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .hero-btn {
+    background: #ff5733;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .hero-btn:hover {
+    background: #e04e2d;
+  }
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 32px;
+    }
+    .hero p {
+      font-size: 16px;
+    }
+    .hero-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+  }
