@@ -14,7 +14,23 @@ document.querySelectorAll('.plan-btn, .post-btn').forEach(btn => {
     alert('Clicked!');
   });
 });
+document.querySelector('.demo-btn')?.addEventListener('click', () => {
+  const modal = document.createElement('div');
+  modal.innerHTML = `
+    <div class="modal">
+      <iframe width="560" height="315" src="https://youtube.com/embed/jasper-demo"></iframe>
+      <button class="close-modal">✕</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+});
 
+// Close Modal
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('close-modal')) {
+    e.target.parentElement.remove();
+  }
+});
 // Login form submission
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();

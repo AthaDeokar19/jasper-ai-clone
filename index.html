@@ -11,15 +11,23 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Jasper</div>
-    <ul class="nav-links">
-      <li><a href="#">Features</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Login</a></li>
-      <li><button class="cta-btn">Try for Free</button></li>
-    </ul>
+    <div class="logo">
+      <img src="assets/images/jasper-logo.png" alt="Jasper Logo">
+    </div>
     <div class="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Products <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#">Jasper Chat</a>
+          <a href="#">Templates</a>
+        </div>
+      </li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#">Sign In</a></li>
+      <li><button class="cta-btn">Start for Free</button></li>
+    </ul>
   </nav>
 
   <!-- Hero Section -->
@@ -32,6 +40,13 @@
       <h1 class="animate__animated animate__fadeIn">Write Amazing Content with AI</h1>
       <p class="animate__animated animate__fadeIn" style="animation-delay: 0.3s;">Create blog posts, social media, and more in seconds with Jasper.</p>
       <button class="hero-btn animate__animated animate__fadeIn" style="animation-delay: 0.6s;">Get Started</button>
+    </div>
+  </section>
+  <section class="trusted-by">
+    <p>TRUSTED BY 100,000+ TEAMS WORLDWIDE</p>
+    <div class="logo-grid">
+      <img src="assets/logos/airbnb.png" alt="Airbnb">
+      <img src="assets/logos/spotify.png" alt="Spotify">
     </div>
   </section>
 
