@@ -44,3 +44,6 @@ document.getElementById('feedback-form').addEventListener('submit', (e) => {
   messageDiv.textContent = `Thank you, ${name}, for your feedback: "${comment}"`;
   document.getElementById('feedback-form').reset();
 });
+document.querySelector('.hero-btn').addEventListener('click', () => {
+  alert('Get Started clicked! Redirect to pricing soon.');
+});
