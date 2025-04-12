@@ -389,3 +389,77 @@
 .login-btn:hover {
   background: #e04e2d;
 }
+/* Existing CSS (keep navbar, pricing, blog, login styles) */
+.feedback {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  margin-top: 20px;
+}
+.feedback h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.feedback form {
+  display: inline-block;
+  text-align: left;
+}
+.feedback label {
+  font-size: 16px;
+  color: #333;
+}
+.feedback input, .feedback textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.feedback-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.feedback-btn:hover {
+  background: #218838;
+}
+/* Existing CSS (keep all styles) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background: #555;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+

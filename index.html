@@ -110,11 +110,17 @@
 <body>
   <nav class="navbar">
     <div class="logo">Jasper</div>
+    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#">Login</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">More</a>
+        <div class="dropdown-content">
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="login.html">Login</a>
+        </div>
+      </li>
       <li><button class="cta-btn">Try for Free</button></li>
     </ul>
   </nav>
@@ -138,5 +144,31 @@
     </section>
   </main>
   <script src="script.js"></script>
+</body>
+</html>
+<section class="feedback">
+  <h2 class="animate__animated animate__fadeIn">Leave Feedback</h2>
+  <form id="feedback-form">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="comment">Comment:</label><br>
+    <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+    <button type="submit" class="feedback-btn">Submit Feedback</button>
+  </form>
+  <div id="feedback-message" style="margin-top: 10px; color: green;"></div>
+</section>
+</main>
+<section class="feedback">
+  <h2 class="animate__animated animate__fadeIn">Leave Feedback</h2>
+  <form id="feedback-form">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="comment">Comment:</label><br>
+    <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+    <button type="submit" class="feedback-btn">Submit Feedback</button>
+  </form>
+  <div id="feedback-message" style="margin-top: 10px; color: green;"></div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
