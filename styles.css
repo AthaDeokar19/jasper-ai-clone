@@ -324,3 +324,68 @@
     max-width: 250px;
   }
 }
+/* Existing CSS (keep navbar and pricing styles) */
+.plan ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: #666;
+  margin: 15px 0;
+}
+.plan ul li {
+  margin-bottom: 10px;
+}
+/* Existing CSS (keep navbar and blog styles) */
+.posts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.post {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Existing CSS (keep navbar, pricing, blog styles) */
+.login {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+.login h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+.login form {
+  display: inline-block;
+  text-align: left;
+}
+.login label {
+  font-size: 16px;
+  color: #333;
+}
+.login input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.login-btn {
+  background: #ff5733;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-btn:hover {
+  background: #e04e2d;
+}
