@@ -21,66 +21,121 @@
     </ul>
     <div class="menu-toggle">☰</div>
   </nav>
-  <!-- Placeholder -->
-  <main>
-    <section class="hero">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <div class="hero-content">
       <h1 class="animate__animated animate__fadeIn">Write Amazing Content with AI</h1>
       <p class="animate__animated animate__fadeIn" style="animation-delay: 0.3s;">Create blog posts, social media, and more in seconds with Jasper.</p>
       <button class="hero-btn animate__animated animate__fadeIn" style="animation-delay: 0.6s;">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2 class="animate__animated animate__fadeIn">Why Jasper?</h2>
+    <div class="feature-cards">
+      <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+        <h3>Speed</h3>
+        <p>Write content 10x faster with AI assistance.</p>
+      </div>
+      <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+        <h3>Quality</h3>
+        <p>Generate high-quality, human-like text.</p>
+      </div>
+      <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
+        <h3>Versatility</h3>
+        <p>Create blogs, ads, emails, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2 class="animate__animated animate__fadeIn">What Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+        <p>"Jasper saved me hours of writing time!"</p>
+        <span>— Jane D., Marketer</span>
+      </div>
+      <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+        <p>"The AI output is surprisingly natural."</p>
+        <span>— John S., Blogger</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Jasper</h4>
+        <p>AI-powered writing for everyone.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Jasper Clone</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Jasper</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#">Login</a></li>
+      <li><button class="cta-btn">Try for Free</button></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="pricing">
+      <h1 class="animate__animated animate__fadeIn">Our Pricing</h1>
+      <div class="plans">
+        <div class="plan animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+          <h2>Basic</h2>
+          <p class="price">$19/month</p>
+          <p>Perfect for starters.</p>
+          <button class="plan-btn">Get Started</button>
+        </div>
+        <div class="plan animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+          <h2>Pro</h2>
+          <p class="price">$49/month</p>
+          <p>Ideal for pros.</p>
+          <button class="plan-btn">Get Started</button>
+        </div>
+      </div>
     </section>
-    <section class="features">
-        <h2 class="animate__animated animate__fadeIn">Why Jasper?</h2>
-        <div class="feature-cards">
-          <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
-            <h3>Speed</h3>
-            <p>Write content 10x faster with AI assistance.</p>
-          </div>
-          <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-            <h3>Quality</h3>
-            <p>Generate high-quality, human-like text.</p>
-          </div>
-          <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
-            <h3>Versatility</h3>
-            <p>Create blogs, ads, emails, and more.</p>
-          </div>
-        </div>
-      </section>
-      <section class="testimonials">
-        <h2 class="animate__animated animate__fadeIn">What Users Say</h2>
-        <div class="testimonial-cards">
-          <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
-            <p>"Jasper saved me hours of writing time!"</p>
-            <span>— Jane D., Marketer</span>
-          </div>
-          <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-            <p>"The AI output is surprisingly natural."</p>
-            <span>— John S., Blogger</span>
-          </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>Jasper</h4>
-            <p>AI-powered writing for everyone.</p>
-          </div>
-          <div class="footer-section">
-            <h4>Product</h4>
-            <ul>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
   </main>
   <script src="script.js"></script>
 </body>

@@ -236,3 +236,91 @@
     align-items: center;
   }
 }
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+/* Pricing */
+.pricing {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+.pricing h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.plan {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.plan h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+.plan .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff5733;
+  margin-bottom: 10px;
+}
+.plan p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.plan-btn {
+  background: #ff5733;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+.plan-btn:hover {
+  background: #e04e2d;
+}
+@media (max-width: 768px) {
+  .plan {
+    width: 100%;
+    max-width: 250px;
+  }
+}
