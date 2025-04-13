@@ -330,3 +330,59 @@
     align-items: center;
   }
 }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.nav-links {
+  transition: transform 0.3s ease-in-out;
+}
+.nav-links.active {
+  transform: translateX(0);
+}
+/* ===== TRUSTED LOGOS SECTION ===== */
+.trusted-by {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.trusted-by-label {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logo-grid img {
+  height: 24px;
+  opacity: 0.6;
+  transition: all 0.3s;
+  filter: brightness(0) invert(0.3);
+}
+
+.logo-grid img:hover {
+  opacity: 1;
+  filter: brightness(1) invert(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo-grid {
+    gap: 25px;
+  }
+  .logo-grid img {
+    height: 20px;
+  }
+}
