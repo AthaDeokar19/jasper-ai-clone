@@ -66,7 +66,68 @@
   font-size: 24px;
   cursor: pointer;
 }
+/* ===== DROPDOWN MENUS ===== */
+.dropdown {
+  position: relative;
+}
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  min-width: 240px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Multi-column dropdowns */
+.dropdown-menu .dropdown-column {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.dropdown-menu h4 {
+  color: #2D6AE0;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 0;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  color: #6E3AFF;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+/* Chevron animation */
+.dropdown i {
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover i {
+  transform: rotate(180deg);
+}
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -385,4 +446,86 @@
   .logo-grid img {
     height: 20px;
   }
+}
+.hero h1 {
+  background: linear-gradient(90deg, #6E3AFF 0%, #2D6AE0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 3.5rem; /* Exact Jasper.ai size */
+}
+/* Add to styles.css */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin: 0 10px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ddd;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background: linear-gradient(90deg, #6E3AFF, #2D6AE0);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.cta-btn, .hero-btn {
+  transition: all 0.3s;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(45, 106, 224, 0.2);
+}
+.cta-btn:hover, .hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(45, 106, 224, 0.3);
+}s
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.chat-header {
+  background: linear-gradient(90deg, #6E3AFF, #2D6AE0);
+  color: white;
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+}
+:focus {
+  outline: 2px solid #2D6AE0;
+  outline-offset: 2px;
+}
+/* Screen reader text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
 }

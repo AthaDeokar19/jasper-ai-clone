@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Preload hero video -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preload" href="assets/hero-video.mp4" as="video">
+<!-- Compress images -->
+<img src="image.jpg" loading="lazy" decoding="async">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jasper.ai Clone</title>
@@ -12,22 +18,79 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="assets/images/jasper-logo.png" alt="Jasper Logo">
+      <img src="assets/images/jasper-logo.png" alt="Jasper Logo" width="120">
     </div>
-    <div class="menu-toggle">☰</div>
+  
     <ul class="nav-links">
+      <!-- Platforms Dropdown -->
       <li class="dropdown">
-        <a href="#" class="dropbtn">Products <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="#">Jasper Chat</a>
-          <a href="#">Templates</a>
+        <a href="#" class="nav-link">Platforms <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-column">
+            <h4>Content Creation</h4>
+            <a href="#">Jasper Chat</a>
+            <a href="#">Documents</a>
+            <a href="#">Templates</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>For Teams</h4>
+            <a href="#">Campaigns</a>
+            <a href="#">Collaboration</a>
+            <a href="#">Brand Voice</a>
+          </div>
         </div>
       </li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#">Sign In</a></li>
-      <li><button class="cta-btn">Start for Free</button></li>
+  
+      <!-- Solutions Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-column">
+            <h4>By Use Case</h4>
+            <a href="#">Blog Content</a>
+            <a href="#">Social Media</a>
+            <a href="#">SEO</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>By Industry</h4>
+            <a href="#">E-commerce</a>
+            <a href="#">Agencies</a>
+            <a href="#">SaaS</a>
+          </div>
+        </div>
+      </li>
+  
+      <!-- Resources Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#">Blog</a>
+          <a href="#">Guides</a>
+          <a href="#">Webinars</a>
+          <a href="#">Help Center</a>
+        </div>
+      </li>
+  
+      <!-- Company Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="nav-link">Company <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </li>
+  
+      <!-- Pricing Link -->
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
     </ul>
+  
+    <div class="nav-buttons">
+      <a href="#" class="login-btn">Sign In</a>
+      <button class="cta-btn">Start Free Trial</button>
+    </div>
+  
+    <div class="menu-toggle">☰</div>
   </nav>
 
   <!-- Hero Section -->
@@ -72,15 +135,17 @@
   <!-- Testimonials Section -->
   <section class="testimonials">
     <h2 class="animate__animated animate__fadeIn">What Users Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
-        <p>"Jasper saved me hours of writing time!"</p>
-        <span>— Jane D., Marketer</span>
+    <div class="testimonial-carousel">
+      <div class="testimonial active">
+        <p>"Jasper writes better than my marketing team!"</p>
+        <span>— Sarah K., CMO</span>
       </div>
-      <div class="testimonial animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-        <p>"The AI output is surprisingly natural."</p>
-        <span>— John S., Blogger</span>
+      <div class="testimonial">
+        <p>"10x faster content creation with no quality drop."</p>
+        <span>— Mark T., Founder</span>
       </div>
+      <button class="carousel-prev">❮</button>
+      <button class="carousel-next">❯</button>
     </div>
   </section>
 
@@ -193,5 +258,8 @@
   </div>
 </section>
 <script src="script.js"></script>
+<div class="chat-widget">
+  <div class="chat-header">Need help? Chat with us</div>
+</div>
 </body>
 </html>

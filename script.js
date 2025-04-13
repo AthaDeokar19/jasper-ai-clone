@@ -63,3 +63,36 @@ document.getElementById('feedback-form').addEventListener('submit', (e) => {
 document.querySelector('.hero-btn').addEventListener('click', () => {
   alert('Get Started clicked! Redirect to pricing soon.');
 });
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+}
+
+document.querySelector('.carousel-next').addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+ScrollReveal().reveal('.feature-card', {
+  delay: 200,
+  distance: '20px',
+  origin: 'bottom',
+  interval: 100
+});
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  if (!email.includes('@')) {
+    document.getElementById('email-error').textContent = 'Valid email required';
+    return;
+  }
+  // Proceed with login
+});

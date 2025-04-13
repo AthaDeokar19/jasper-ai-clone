@@ -1,72 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing - Jasper Clone</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">Jasper</div>
-    <div class="menu-toggle">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn">More</a>
-        <div class="dropdown-content">
-          <a href="pricing.html">Pricing</a>
-          <a href="blog.html">Blog</a>
-          <a href="login.html">Login</a>
-        </div>
-      </li>
-      <li><button class="cta-btn">Try for Free</button></li>
-    </ul>
-  </nav>
-  <main>
-    <section class="pricing">
-      <h1>Simple, transparent pricing</h1>
-      <div class="plans">
-        <div class="plan">
-          <h3>Starter</h3>
-          <p class="price">$49<span>/month</span></p>
-          <ul>
-            <li>50 AI templates</li>
-            <li>5 user seats</li>
-          </ul>
-          <button class="plan-btn">Get Started</button>
-        </div>
-        <div class="plan highlight">
-          <h3>Pro</h3>
-          <p class="price">$99<span>/month</span></p>
-          <ul>
-            <li>100 AI templates</li>
-            <li>10 user seats</li>
-          </ul>
-          <button class="plan-btn">Get Started</button>
-        </div>
-        <div class="plan">
-          <h3>Business</h3>
-          <p class="price">Custom</p>
-          <ul>
-            <li>Unlimited templates</li>
-            <li>20+ user seats</li>
-          </ul>
-          <button class="plan-btn">Contact Sales</button>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Jasper. All rights reserved.</p>
-    <ul class="footer-links">
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms</a></li>
-      <li><a href="#">Support</a></li>
-    </ul>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="pricing">
+  <h1>Simple, transparent pricing</h1>
+  
+  <!-- Billing Toggle -->
+  <div class="billing-toggle">
+    <span>Monthly</span>
+    <label class="switch">
+      <input type="checkbox" id="billing-toggle">
+      <span class="slider round"></span>
+    </label>
+    <span>Annual (Save 20%)</span>
+  </div>
+  
+  <div class="plans">
+    <div class="plan">
+      <h3>Starter</h3>
+      <p class="price">$49<span>/month</span></p>
+      <ul>
+        <li>50 AI templates</li>
+        <li>5 user seats</li>
+      </ul>
+      <button class="plan-btn">Get Started</button>
+    </div>
+    <div class="plan highlight">
+      <h3>Pro</h3>
+      <p class="price">$99<span>/month</span></p>
+      <ul>
+        <li>100 AI templates</li>
+        <li>10 user seats</li>
+      </ul>
+      <button class="plan-btn">Get Started</button>
+    </div>
+    <div class="plan">
+      <h3>Business</h3>
+      <p class="price">Custom</p>
+      <ul>
+        <li>Unlimited templates</li>
+        <li>20+ user seats</li>
+      </ul>
+      <button class="plan-btn">Contact Sales</button>
+    </div>
+  </div>
+</section>
