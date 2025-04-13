@@ -112,3 +112,12 @@ try {
 } catch (e) {
   console.error("Video error:", e);
 }
+// Add to script.js
+let current = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+setInterval(() => {
+  testimonials[current].classList.remove('active');
+  current = (current + 1) % testimonials.length;
+  testimonials[current].classList.add('active');
+}, 5000);

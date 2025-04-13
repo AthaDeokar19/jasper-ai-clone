@@ -593,3 +593,100 @@ input:checked + .slider:before {
   height: 100%;
   object-fit: cover;
 }
+<!-- Add to styles.css -->
+.nav-link:hover {
+  color: #6E3AFF !important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Mega dropdown */
+.dropdown-menu {
+  width: 800px; /* Wider like Jasper */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.hero-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(110, 58, 255, 0.4) 0%, rgba(45, 106, 224, 0.6) 100%);
+}
+
+.hero h1 {
+  letter-spacing: -0.5px; /* Jasper's exact spacing */
+  margin-bottom: 16px; /* Not 20px */
+}
+.logo-grid img {
+  filter: grayscale(100%) brightness(0.7);
+  transition: all 0.4s ease;
+}
+
+.logo-grid img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+.feature-card {
+  border-radius: 12px; /* Jasper uses 12px */
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.popular-badge {
+  background: #FFD700;
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+/* ===== DROPDOWN MENUS ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  min-width: 240px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+/* Chevron arrow rotation */
+.dropdown:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.fa-chevron-down {
+  transition: transform 0.3s;
+  margin-left: 5px;
+  font-size: 12px;
+}
