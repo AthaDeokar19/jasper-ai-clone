@@ -93,21 +93,24 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop class="hero-video">
-      <source src="assets/hero-video.mp4" type="video/mp4">
-      Your browser does not support video.
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
+      <!-- Fallback image if video fails -->
+      <img src="assets/images/hero-fallback.jpg" alt="AI Content Creation" class="fallback-image">
     </video>
+    
+    <!-- Gradient Overlay -->
+    <div class="video-overlay"></div>
+    
+    <!-- Content -->
     <div class="hero-content">
-      <h1 class="animate__animated animate__fadeIn">Write Amazing Content with AI</h1>
-      <p class="animate__animated animate__fadeIn" style="animation-delay: 0.3s;">Create blog posts, social media, and more in seconds with Jasper.</p>
-      <button class="hero-btn animate__animated animate__fadeIn" style="animation-delay: 0.6s;">Get Started</button>
-    </div>
-  </section>
-  <section class="trusted-by">
-    <p>TRUSTED BY 100,000+ TEAMS WORLDWIDE</p>
-    <div class="logo-grid">
-      <img src="assets/logos/airbnb.png" alt="Airbnb">
-      <img src="assets/logos/spotify.png" alt="Spotify">
+      <h1>Write Amazing Content with AI</h1>
+      <p>Create blog posts, social media, and more in seconds with Jasper.</p>
+      <div class="hero-buttons">
+        <button class="cta-btn">Start Free Trial</button>
+        <button class="secondary-btn">Watch Demo</button>
+      </div>
     </div>
   </section>
 

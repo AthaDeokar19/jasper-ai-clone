@@ -101,3 +101,14 @@ if (loginForm) {
     // Proceed with login
   });
 }
+// Force video play and handle failures
+const heroVideo = document.querySelector('.hero-video');
+
+try {
+  heroVideo.play().catch(e => {
+    console.log("Autoplay blocked - showing fallback");
+    document.querySelector('.fallback-image').style.display = 'block';
+  });
+} catch (e) {
+  console.error("Video error:", e);
+}
