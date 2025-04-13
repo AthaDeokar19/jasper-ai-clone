@@ -10,11 +10,11 @@
 <body>
   <nav class="navbar">
     <div class="logo">Jasper</div>
-    <div class="menu-toggle">☰</div>
+    <div class="menu-toggle" aria-label="Toggle navigation">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#" class="dropbtn">More</a>
+        <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">More</a>
         <div class="dropdown-content">
           <a href="pricing.html">Pricing</a>
           <a href="blog.html">Blog</a>
@@ -28,30 +28,30 @@
     <section class="blog">
       <h1 class="animate__animated animate__fadeIn">Jasper Blog</h1>
       <div class="posts">
-        <div class="post animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+        <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
           <h2>AI Writing Tips</h2>
-          <p>Learn how to use AI effectively. Published on April 1, 2025.</p>
+          <p>Learn how to use AI effectively. <time datetime="2025-04-01">Published on April 1, 2025</time>.</p>
           <button class="post-btn">Read More</button>
-        </div>
-        <div class="post animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+        </article>
+        <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
           <h2>Boosting Productivity with Jasper</h2>
-          <p>Discover ways to maximize your workflow. Published on April 5, 2025.</p>
+          <p>Discover ways to maximize your workflow. <time datetime="2025-04-05">Published on April 5, 2025</time>.</p>
           <button class="post-btn">Read More</button>
-        </div>
+        </article>
       </div>
     </section>
     <section class="feedback">
       <h2 class="animate__animated animate__fadeIn">Leave Feedback</h2>
       <form id="feedback-form">
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" required aria-required="true"><br><br>
         <label for="comment">Comment:</label><br>
-        <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+        <textarea id="comment" name="comment" rows="4" required aria-required="true"></textarea><br><br>
         <button type="submit" class="feedback-btn">Submit Feedback</button>
       </form>
-      <div id="feedback-message" style="margin-top: 10px; color: green;"></div>
+      <div id="feedback-message" style="margin-top: 10px; color: green;" aria-live="polite"></div>
     </section>
   </main>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

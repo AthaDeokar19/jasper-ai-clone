@@ -3,7 +3,7 @@
   --primary-blue: #2D6AE0;
   --primary-purple: #6E3AFF;
   --dark-text: #1A1A1A;
-}
+} /* Ensure this closing brace is correctly placed and matches the opening block */
 
 /* General Reset */
 * {
@@ -209,13 +209,23 @@
 .logo-grid {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 40px;
-  padding: 20px 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .logo-grid img {
   height: 30px;
   opacity: 0.7;
+  transition: all 0.3s;
+  filter: brightness(0) invert(0.3);
+}
+
+.logo-grid img:hover {
+  opacity: 1;
+  filter: brightness(1) invert(0);
 }
 
 /* Testimonials Section */
@@ -381,10 +391,11 @@
   line-height: 1.8;
 }
 
-.footer-section a:hover {
-  color: var(--primary-purple);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
-
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -436,13 +447,14 @@
 .logo-grid img:hover {
   opacity: 1;
   filter: brightness(1) invert(0);
+.hero h1 {
+  font-size: 3.5rem; /* Exact Jasper.ai size */
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
 }
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .logo-grid {
-    gap: 25px;
-  }
   .logo-grid img {
     height: 20px;
   }
@@ -498,7 +510,7 @@ input:checked + .slider:before {
 .cta-btn:hover, .hero-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(45, 106, 224, 0.3);
-}s
+}
 .chat-widget {
   position: fixed;
   bottom: 20px;
