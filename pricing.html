@@ -1,54 +1,43 @@
 <section class="pricing">
   <header>
-    <h1>Simple, transparent pricing</h1>
+      <h1>Simple, transparent pricing</h1>
   </header>
-  
+
   <!-- Billing Toggle -->
   <div class="billing-toggle">
-    <span>Monthly</span>
-    <label class="switch">
-      <input type="checkbox" id="billing-toggle">
-      <span class="slider round"></span>
-    </label>
-    <span>Annual (Save 20%)</span>
+      <span>Monthly</span>
+      <label class="switch">
+          <input type="checkbox" id="billing-toggle">
+          <span class="slider round"></span>
+      </label>
+      <span>Annual (Save 20%)</span>
   </div>
-  <div class="pricing-toggle">
-    <span>Monthly</span>
-    <label class="switch">
-      <input type="checkbox" id="billing-toggle">
-      <span class="slider"></span>
-    </label>
-    <span>Annual (Save 20%)</span>
-  </div>
-  
-  <!-- Add to plan -->
-  <div class="popular-badge">Most Popular</div>
-  
+
   <div class="plans">
-    <div class="plan">
-      <h3>Starter</h3>
-      <p class="price">$49<span>/month</span></p>
-      <ul>
-        <li>50 AI templates</li>
-      </ul>
-      <button class="plan-btn" aria-label="Get started with the Starter plan">Get Started</button>
-    </div>
-    <div class="plan highlight">
-      <h3>Pro</h3>
-      <p class="price">$99<span>/month</span></p>
-      <ul>
-        <li>100 AI templates</li>
-        <li>10 user seats</li>
-      </ul>
-      <button class="plan-btn">Get Started</button>
-    </div>
-    <div class="plan">
-      <h3>Business</h3>
-      <p class="price">Custom</p>
-      <ul>
-      <ul>
-        <li>Unlimited templates</li>
-      </ul>
-      <button class="plan-btn" aria-label="Contact sales for the Business plan">Contact Sales</button>
+      <div class="plan">
+          <h3>Starter</h3>
+          <p class="price" data-monthly="49" data-annual="490">$49<span>/month</span></p>
+          <ul>
+              <li>50 AI templates</li>
+          </ul>
+          <button class="plan-btn" aria-label="Get started with the Starter plan">Get Started</button>
+      </div>
+      <div class="plan highlight">
+          <h3>Pro</h3>
+          <p class="price" data-monthly="99" data-annual="990">$99<span>/month</span></p>
+          <ul>
+              <li>100 AI templates</li>
+              <li>10 user seats</li>
+          </ul>
+          <button class="plan-btn">Get Started</button>
+      </div>
+      <div class="plan">
+          <h3>Business</h3>
+          <p class="price" data-monthly="Custom" data-annual="Custom">Custom</p>
+          <ul>
+              <li>Unlimited templates</li>
+          </ul>
+          <button class="plan-btn" aria-label="Contact sales for the Business plan">Contact Sales</button>
+      </div>
   </div>
 </section>
