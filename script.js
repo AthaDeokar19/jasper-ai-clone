@@ -132,3 +132,39 @@ try {
 } catch (e) {
   console.error("Video error:", e);
 }
+const billingToggle = document.getElementById('billing-toggle');
+const monthlyPrices = [49, 99, 'Custom'];
+const annualPrices = [490, 990, 'Custom'];
+
+billingToggle.addEventListener('change', function() {
+  const prices = this.checked ? annualPrices : monthlyPrices;
+  document.querySelectorAll('.plan').forEach((plan, index) => {
+    plan.querySelector('.price').textContent = prices[index] === 'Custom' ? 'Custom' : `$${prices[index]}/year`;
+  });
+});
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+document.querySelector('.demo-btn')?.addEventListener('click', () => {
+  const modal = document.createElement('div');
+  modal.innerHTML = `
+    <div class="modal">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/DDRHVVuP_0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <button class="close-modal">✕</button>
+    </div>
+  `;
+  modal.classList.add('modal-container');
+  document.body.appendChild(modal);
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('close-modal')) {
+    const modalContainer = document.querySelector('.modal-container');
+    if (modalContainer) {
+      modalContainer.remove();
+    }
+  }
+});

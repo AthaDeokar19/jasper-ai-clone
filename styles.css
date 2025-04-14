@@ -311,3 +311,50 @@ ul {
 .login-btn:hover {
   background: var(--secondary-purple);
 }
+/* Root Variables */
+:root {
+  --primary-blue: #2D6AE0;
+  --primary-purple: #6E3AFF;
+  --secondary-purple: #5a32d1;
+  --dark-text: #1A1A1A;
+  --light-text: #666;
+  --border-color: #e6e6e6;
+  --light-bg: #f8f9fa;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--dark-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark-text);
+}
+
+/* Buttons */
+.cta-btn, .secondary-btn {
+  padding:
