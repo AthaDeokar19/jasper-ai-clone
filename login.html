@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Jasper Clone</title>
+  <title>Jasper AI - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <input type="checkbox" id="rememberMe" name="rememberMe">
-  <label for="rememberMe">Remember Me</label><br><br>
 <body>
   <nav class="navbar">
     <div class="logo">Jasper</div>
@@ -21,22 +20,64 @@
           <a href="pricing.html">Pricing</a>
           <a href="blog.html">Blog</a>
           <a href="login.html">Login</a>
+          <a href="guides.html">Guides</a>
         </div>
       </li>
-      <li><button class="cta-btn">Try for Free</button></li>
+      <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
     </ul>
   </nav>
-      <section class="login">
-        <h1 class="animate__animated animate__fadeIn">Login</h1>
-        <form>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" required><br><br>
-          <label for="password">Password:</label><br>
-          <input type="password" id="password" name="password" required><br><br>
-          <button type="submit" class="login-btn">Login</button>
-        </form>
-      </section>
-    </main>
+  <section class="login">
+    <h1 class="animate__animated animate__fadeIn">Login</h1>
+    <form id="login-form">
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required><br><br>
+      <input type="checkbox" id="rememberMe" name="rememberMe">
+      <label for="rememberMe">Remember Me</label><br><br>
+      <a href="#" class="forgot-password">Forgot Password?</a><br><br>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+  </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Jasper</h4>
+        <p>AI that helps you create content faster.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">What's New</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="guides.html">Guides</a>
+        <a href="#">Help Center</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Jasper. All rights reserved.</p>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,134 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Jasper Clone</title>
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Jasper AI - Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Removed invalid <a> tag from the <head> section -->
-
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">Jasper</div>
     <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">More</button>
+        <a href="#" class="dropbtn">More</a>
         <div class="dropdown-content">
           <a href="pricing.html">Pricing</a>
           <a href="blog.html">Blog</a>
           <a href="login.html">Login</a>
+          <a href="guides.html">Guides</a>
         </div>
       </li>
-      <li><button class="cta-btn">Try for Free</button></li>
+      <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
     </ul>
   </nav>
-
-  <!-- Blog Hero Section -->
   <section class="blog-hero">
     <h1>Insights from Jasper</h1>
     <p>Discover how AI can transform your content creation.</p>
   </section>
-
-  <!-- Blog Posts Section -->
   <section class="blog-posts">
     <div class="posts">
-      <!-- Blog Post #1 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
-        <img src="assets/images/ai-writing-tips.jpg" alt="AI Writing Tips Thumbnail" class="post-thumbnail">
+        <img src="assets/images/ai-writing-tips.jpg" alt="AI Writing Tips Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=AI+Writing+Tips" alt="Fallback AI Writing Tips" class="post-thumbnail-fallback" style="display:none;">
         <h2>AI Writing Tips</h2>
-        <p>Learn how to use AI effectively. 
-          <time datetime="2025-04-01">Published on April 1, 2025</time>.
-        </p>
+        <p>Learn how to use AI effectively. <time datetime="2025-04-01">Published on April 1, 2025</time>.</p>
         <button class="post-btn">Read More</button>
       </article>
-
-      <!-- Blog Post #2 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-        <img src="assets/images/productivity.jpg" alt="Boosting Productivity Thumbnail" class="post-thumbnail">
+        <img src="assets/images/productivity.jpg" alt="Boosting Productivity Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=Boosting+Productivity" alt="Fallback Boosting Productivity" class="post-thumbnail-fallback" style="display:none;">
         <h2>Boosting Productivity with Jasper</h2>
-        <p>Discover ways to maximize your workflow. 
-          <time datetime="2025-04-05">Published on April 5, 2025</time>.
-        </p>
+        <p>Discover ways to maximize your workflow. <time datetime="2025-04-05">Published on April 5, 2025</time>.</p>
         <button class="post-btn">Read More</button>
       </article>
-
-      <!-- Blog Post #3 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
-        <img src="assets/images/content-strategy.jpg" alt="Content Strategy Thumbnail" class="post-thumbnail">
+        <img src="assets/images/content-strategy.jpg" alt="Content Strategy Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=Content+Strategy" alt="Fallback Content Strategy" class="post-thumbnail-fallback" style="display:none;">
         <h2>Content Strategy for AI Users</h2>
-        <p>Plan your content like a pro with AI tools. 
-          <time datetime="2025-04-10">Published on April 10, 2025</time>.
-        </p>
+        <p>Plan your content like a pro with AI tools. <time datetime="2025-04-10">Published on April 10, 2025</time>.</p>
         <button class="post-btn">Read More</button>
       </article>
     </div>
   </section>
-
-  <!-- Feedback Section -->
   <section class="feedback">
     <h2>Leave Feedback</h2>
     <form id="feedback-form">
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name" required><br><br>
-
       <label for="comment">Comment:</label><br>
       <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-
       <button type="submit" class="feedback-btn">Submit Feedback</button>
     </form>
-
-    <!-- Feedback Message -->
     <div id="feedback-message"></div>
   </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <!-- Footer Column #1 -->
       <div class="footer-section">
         <h4>Jasper</h4>
         <p>AI that helps you create content faster.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
-
-      <!-- Footer Column #2 -->
       <div class="footer-section">
         <h4>Product</h4>
         <a href="#">Features</a>
-        <a href="#">Pricing</a>
+        <a href="pricing.html">Pricing</a>
         <a href="#">What's New</a>
+        <a href="#">Roadmap</a>
       </div>
-
-      <!-- Footer Column #3 -->
       <div class="footer-section">
         <h4>Resources</h4>
-        <a href="#">Blog</a>
-        <a href="#">Templates</a>
+        <a href="blog.html">Blog</a>
+        <a href="guides.html">Guides</a>
         <a href="#">Help Center</a>
+        <a href="#">API</a>
       </div>
-
-      <!-- Footer Column #4 -->
       <div class="footer-section">
         <h4>Company</h4>
-        <a href="#">About Us</a>
+        <a href="#">About</a>
         <a href="#">Careers</a>
-        <a href="#">Contact Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
       </div>
     </div>
-
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
-      © 2025 Jasper.ai Clone. All rights reserved.
+      <p>© 2025 Jasper. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- JavaScript File -->
-  <script src="./script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
