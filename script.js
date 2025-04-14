@@ -1,9 +1,12 @@
 // Menu Toggle Logic
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -22,16 +25,20 @@ document.querySelectorAll('.plan-btn, .post-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     alert('Clicked!');
   });
-});
-
-// Demo Button Modal
-document.querySelector('.demo-btn')?.addEventListener('click', () => {
-  const modal = document.createElement('div');
-  modal.innerHTML = `
-    <div class="modal">
-      <iframe width="560" height="315" src="https://youtube.com/embed/jasper-demo"></iframe>
-      <button class="close-modal">✕</button>
-    </div>
+const demoBtn = document.querySelector('.demo-btn');
+if (demoBtn) {
+  demoBtn.addEventListener('click', () => {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <div class="modal">
+        <iframe width="560" height="315" src="https://youtube.com/embed/jasper-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button class="close-modal">✕</button>
+      </div>
+    `;
+    modal.classList.add('modal-container');
+    document.body.appendChild(modal);
+  });
+}
   `;
   document.body.appendChild(modal);
 });
@@ -116,20 +123,30 @@ const chatHeader = document.querySelector('.chat-header');
 if (chatHeader) {
   chatHeader.addEventListener('click', () => {
     const chatBody = document.querySelector('.chat-body');
-    if (chatBody) {
-      chatBody.classList.toggle('active');
-    }
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  try {
+    heroVideo.play().catch(e => {
+      console.log("Autoplay blocked - showing fallback");
+      const fallbackImage = document.querySelector('.fallback-image');
+      if (fallbackImage) {
+        fallbackImage.style.display = 'block';
+      }
+const billingToggle = document.getElementById('billing-toggle');
+const monthlyPrices = [49, 99, 'Custom'];
+const annualPrices = [490, 990, 'Custom'];
+
+if (billingToggle) {
+  billingToggle.addEventListener('change', function() {
+    const prices = this.checked ? annualPrices : monthlyPrices;
+    document.querySelectorAll('.plan').forEach((plan, index) => {
+      const priceElement = plan.querySelector('.price');
+      if (priceElement) {
+        priceElement.textContent = prices[index] === 'Custom' ? 'Custom' : `$${prices[index]}/${this.checked ? 'year' : 'month'}`;
+      }
+    });
   });
 }
-
-// Hero Video Autoplay Fallback
-const heroVideo = document.querySelector('.hero-video');
-try {
-  heroVideo.play().catch(e => {
-    console.log("Autoplay blocked - showing fallback");
-    document.querySelector('.fallback-image').style.display = 'block';
-  });
-} catch (e) {
   console.error("Video error:", e);
 }
 const billingToggle = document.getElementById('billing-toggle');

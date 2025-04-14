@@ -357,7 +357,15 @@ ul {
 
 /* Buttons */
 .cta-btn, .secondary-btn {
-  padding:
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+}
   .hero {
     position: relative;
     height: 80vh;

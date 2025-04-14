@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-  <a href="blog-post-1.html" class="post-btn">Read More</a>
+  <!-- Removed invalid <a> tag from the <head> section -->
 
 </head>
 <body>
@@ -21,7 +21,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#" class="dropbtn">More</a>
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">More</button>
         <div class="dropdown-content">
           <a href="pricing.html">Pricing</a>
           <a href="blog.html">Blog</a>
@@ -43,7 +43,7 @@
     <div class="posts">
       <!-- Blog Post #1 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
-        <img src="assets/images/ai-writing-tips.jpg" alt="AI Writing Tips" class="post-thumbnail">
+        <img src="assets/images/ai-writing-tips.jpg" alt="AI Writing Tips Thumbnail" class="post-thumbnail">
         <h2>AI Writing Tips</h2>
         <p>Learn how to use AI effectively. 
           <time datetime="2025-04-01">Published on April 1, 2025</time>.
@@ -53,7 +53,7 @@
 
       <!-- Blog Post #2 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-        <img src="assets/images/productivity.jpg" alt="Boosting Productivity" class="post-thumbnail">
+        <img src="assets/images/productivity.jpg" alt="Boosting Productivity Thumbnail" class="post-thumbnail">
         <h2>Boosting Productivity with Jasper</h2>
         <p>Discover ways to maximize your workflow. 
           <time datetime="2025-04-05">Published on April 5, 2025</time>.
@@ -63,7 +63,7 @@
 
       <!-- Blog Post #3 -->
       <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
-        <img src="assets/images/content-strategy.jpg" alt="Content Strategy" class="post-thumbnail">
+        <img src="assets/images/content-strategy.jpg" alt="Content Strategy Thumbnail" class="post-thumbnail">
         <h2>Content Strategy for AI Users</h2>
         <p>Plan your content like a pro with AI tools. 
           <time datetime="2025-04-10">Published on April 10, 2025</time>.
@@ -131,6 +131,6 @@
   </footer>
 
   <!-- JavaScript File -->
-  <script src="./script.js"></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
