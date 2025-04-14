@@ -21,19 +21,14 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// Button Click Alerts
-document.querySelectorAll('.plan-btn, .post-btn, .hero-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    alert('Clicked! Redirecting to signup soon.');
-  });
-});
-
 // Demo Modal
 document.querySelector('.demo-btn')?.addEventListener('click', () => {
   const modal = document.createElement('div');
   modal.innerHTML = `
     <div class="modal">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/DDRHVVuP_0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="modal-content">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DDRHVVuP_0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       <button class="close-modal">✕</button>
     </div>
   `;
@@ -42,6 +37,83 @@ document.querySelector('.demo-btn')?.addEventListener('click', () => {
 
   document.querySelector('.close-modal').addEventListener('click', () => {
     modal.remove();
+  });
+});
+
+// Login Modal
+document.querySelectorAll('a[href="login.html"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <div class="modal">
+        <div class="modal-content">
+          <form id="login-modal-form">
+            <label for="modal-email">Email:</label><br>
+            <input type="email" id="modal-email" name="modal-email" required><br><br>
+            <label for="modal-password">Password:</label><br>
+            <input type="password" id="modal-password" name="modal-password" required><br><br>
+            <input type="checkbox" id="modal-rememberMe" name="modal-rememberMe">
+            <label for="modal-rememberMe">Remember Me</label><br><br>
+            <a href="#" class="forgot-password">Forgot Password?</a><br><br>
+            <button type="submit" class="login-btn">Login</button>
+          </form>
+        </div>
+        <button class="close-modal">✕</button>
+      </div>
+    `;
+    modal.classList.add('modal-container');
+    document.body.appendChild(modal);
+
+    document.querySelector('#login-modal-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('modal-email').value;
+      const password = document.getElementById('modal-password').value;
+      if (email && password) {
+        alert(`Logged in with ${email}. Redirecting to dashboard soon.`);
+        modal.remove();
+      } else {
+        alert('Please fill all fields!');
+      }
+    });
+
+    document.querySelector('.close-modal').addEventListener('click', () => {
+      modal.remove();
+    });
+  });
+});
+
+// Button Click Actions
+document.querySelectorAll('.plan-btn, .post-btn, .cta-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (btn.classList.contains('plan-btn')) {
+      if (btn.textContent === 'Contact Sales') {
+        window.location.href = 'mailto:sales@jasper.ai';
+      } else {
+        window.location.href = 'signup.html';
+      }
+    } else if (btn.classList.contains('post-btn')) {
+      const articleTitle = btn.closest('.post').querySelector('h2').textContent;
+      const modal = document.createElement('div');
+      modal.innerHTML = `
+        <div class="modal article-modal">
+          <div class="modal-content">
+            <h2>${articleTitle}</h2>
+            <p>This is a preview of the article. Sign up to read the full content!</p>
+            <a href="signup.html" class="cta-btn">Sign Up</a>
+          </div>
+          <button class="close-modal">✕</button>
+        </div>
+      `;
+      modal.classList.add('modal-container');
+      document.body.appendChild(modal);
+
+      document.querySelector('.close-modal').addEventListener('click', () => {
+        modal.remove();
+      });
+    } else if (btn.classList.contains('cta-btn')) {
+      window.location.href = 'signup.html';
+    }
   });
 });
 
