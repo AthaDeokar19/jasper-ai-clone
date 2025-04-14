@@ -1,13 +1,30 @@
+// Menu Toggle Logic
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href').slice(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Button Click Alerts
 document.querySelectorAll('.plan-btn, .post-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     alert('Clicked!');
   });
 });
+
+// Demo Button Modal
 document.querySelector('.demo-btn')?.addEventListener('click', () => {
   const modal = document.createElement('div');
   modal.innerHTML = `
@@ -25,13 +42,8 @@ document.addEventListener('click', (e) => {
     e.target.parentElement.remove();
   }
 });
-// Login form submission
-document.querySelector('form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  alert(`Logged in with ${email}`);
-});
+
+// Login Form Submission
 const loginForm = document.querySelector('form');
 if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
@@ -41,17 +53,8 @@ if (loginForm) {
     alert(`Logged in with ${email}`);
   });
 }
-  messageDiv.textContent = `Thank you, ${name}, for your feedback: "${comment}"`;
-  document.getElementById('feedback-form').reset();
-});
-document.querySelector('.hero-btn').addEventListener('click', () => {
-  alert('Get Started clicked! Redirect to pricing soon.');
-});
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll('.testimonial');
 
-function showTestimonial(index) {
-  testimonials.forEach((t, i) => {
+// Feedback Form Submission
 const feedbackForm = document.getElementById('feedback-form');
 if (feedbackForm) {
   feedbackForm.addEventListener('submit', (e) => {
@@ -60,18 +63,30 @@ if (feedbackForm) {
     const comment = document.getElementById('comment').value;
     const messageDiv = document.getElementById('feedback-message');
     if (messageDiv) {
+      messageDiv.textContent = `Thank you, ${name}, for your feedback: "${comment}"`;
+      feedbackForm.reset();
+    }
+  });
+}
+
+// Hero Button Click
 const heroBtn = document.querySelector('.hero-btn');
 if (heroBtn) {
   heroBtn.addEventListener('click', () => {
     alert('Get Started clicked! Redirect to pricing soon.');
   });
 }
+
+// Testimonial Carousel
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.toggle('active', i === index);
   });
 }
 
-document.querySelector('.carousel-prev').addEventListener('click', () => {
-  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-  showTestimonial(currentTestimonial);
 const carouselNext = document.querySelector('.carousel-next');
 const carouselPrev = document.querySelector('.carousel-prev');
 
@@ -87,23 +102,28 @@ if (carouselPrev) {
     currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
     showTestimonial(currentTestimonial);
   });
-if (loginForm) {
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    if (!email.includes('@')) {
-      const emailError = document.getElementById('email-error');
-      if (emailError) {
-        emailError.textContent = 'Valid email required';
-      }
-      return;
+}
+
+// Auto-rotate Testimonials
+setInterval(() => {
+  testimonials[currentTestimonial].classList.remove('active');
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  testimonials[currentTestimonial].classList.add('active');
+}, 5000);
+
+// Chat Widget Toggle
+const chatHeader = document.querySelector('.chat-header');
+if (chatHeader) {
+  chatHeader.addEventListener('click', () => {
+    const chatBody = document.querySelector('.chat-body');
+    if (chatBody) {
+      chatBody.classList.toggle('active');
     }
-    // Proceed with login
   });
 }
-// Force video play and handle failures
-const heroVideo = document.querySelector('.hero-video');
 
+// Hero Video Autoplay Fallback
+const heroVideo = document.querySelector('.hero-video');
 try {
   heroVideo.play().catch(e => {
     console.log("Autoplay blocked - showing fallback");
@@ -111,13 +131,4 @@ try {
   });
 } catch (e) {
   console.error("Video error:", e);
-}
-// Add to script.js
-let current = 0;
-const testimonials = document.querySelectorAll('.testimonial');
-
-setInterval(() => {
-  testimonials[current].classList.remove('active');
-  current = (current + 1) % testimonials.length;
-  testimonials[current].classList.add('active');
-}, 5000);
+} 
