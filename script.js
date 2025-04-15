@@ -359,4 +359,44 @@ nextBtn.addEventListener('click', () => {
   currentTestimonial = (currentTestimonial + 1) % testimonials.length;
   showTestimonial(currentTestimonial);
 });
+// Typewriter effect for hero headline
+const words = ["Marketing Teams", "Content Creators", "Entrepreneurs", "Businesses"];
+let i = 0;
+const typewriterEl = document.getElementById("typewriter");
+
+function typeWriter() {
+  typewriterEl.textContent = words[i];
+  i = (i + 1) % words.length;
+}
+typeWriter();
+setInterval(typeWriter, 2500);
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Testimonial carousel
+const testimonials = document.querySelectorAll('.testimonial');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+}
+
+prevBtn.addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
 
