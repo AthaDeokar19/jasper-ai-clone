@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jasper AI - Pricing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Jasper</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#">Blog Writing</a></li>
-          <li><a href="#">Social Media</a></li>
-          <li><a href="#">Email Marketing</a></li>
-          <li><a href="#">Ad Copy</a></li>
-        </ul>
+        <a href="#" class="dropbtn">More</a>
+        <div class="dropdown-content">
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="login.html">Login</a>
+          <a href="guides.html">Guides</a>
+        </div>
       </li>
-      <li><a href="pricing.html" class="active-link">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="login.html">Login</a></li>
       <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
     </ul>
   </nav>
-
-  <main class="pricing-main" style="padding: 6rem 2rem 2rem; max-width: 900px; margin: 0 auto; text-align: center;">
-    <h1>Simple, Transparent Pricing</h1>
-    <p>Choose the plan that fits your needs.</p>
-
-    <div class="pricing-plans" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
-      <div class="plan-card" style="background: #222; padding: 2rem; border-radius: 8px; width: 250px;">
-        <h2>Starter</h2>
-        <p style="font-size: 2rem; margin: 1rem 0;">$49<span style="font-size: 1rem;">/month</span></p>
-        <ul style="list-style: none; padding: 0; text-align: left;">
+  <section class="pricing" aria-labelledby="pricing-header">
+    <header>
+      <h1 id="pricing-header">Simple, transparent pricing</h1>
+    </header>
+    <div class="billing-toggle">
+      <span>Monthly</span>
+      <label class="switch">
+        <input type="checkbox" id="billing-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span>Annual (Save 20%)</span>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Starter</h3>
+        <p class="price" data-monthly="49" data-annual="490">$49<span>/month</span></p>
+        <ul>
           <li>50 AI templates</li>
           <li>Basic support</li>
         </ul>
-        <a href="signup.html" class="cta-btn" style="margin-top: 1rem; display: inline-block;">Get Started</a>
+        <a href="signup.html" class="plan-btn">Get Started</a>
       </div>
-
-      <div class="plan-card" style="background: #ff5722; padding: 2rem; border-radius: 8px; width: 250px; color: #fff;">
-        <h2>Pro</h2>
-        <p style="font-size: 2rem; margin: 1rem 0;">$99<span style="font-size: 1rem;">/month</span></p>
-        <ul style="list-style: none; padding: 0; text-align: left;">
+      <div class="plan highlight">
+        <h3>Pro</h3>
+        <p class="price" data-monthly="99" data-annual="990">$99<span>/month</span></p>
+        <ul>
           <li>100+ AI templates</li>
           <li>10 user seats</li>
           <li>Priority support</li>
         </ul>
-        <a href="signup.html" class="cta-btn" style="background: #fff; color: #ff5722; margin-top: 1rem; display: inline-block;">Get Started</a>
+        <a href="signup.html" class="plan-btn">Get Started</a>
       </div>
-
-      <div class="plan-card" style="background: #222; padding: 2rem; border-radius: 8px; width: 250px;">
-        <h2>Business</h2>
-        <p style="font-size: 1.5rem; margin: 1rem 0;">Custom Pricing</p>
-        <ul style="list-style: none; padding: 0; text-align: left;">
+      <div class="plan">
+        <h3>Business</h3>
+        <p class="price" data-monthly="Custom" data-annual="Custom">Custom</p>
+        <ul>
           <li>Unlimited templates</li>
           <li>Custom user seats</li>
           <li>Dedicated support</li>
         </ul>
-        <a href="mailto:sales@jasper.ai" class="cta-btn" style="margin-top: 1rem; display: inline-block;">Contact Sales</a>
+        <a href="mailto:sales@jasper.ai" class="plan-btn">Contact Sales</a>
       </div>
     </div>
-  </main>
-
+  </section>
   <footer class="footer">
-    <p>© 2025 Jasper. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Jasper</h4>
+        <p>AI that helps you create content faster.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">What's New</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="guides.html">Guides</a>
+        <a href="#">Help Center</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Jasper. All rights reserved.</p>
+    </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

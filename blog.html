@@ -1,66 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jasper AI - Blog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar (same as index.html) -->
   <nav class="navbar">
     <div class="logo">Jasper</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#">Blog Writing</a></li>
-          <li><a href="#">Social Media</a></li>
-          <li><a href="#">Email Marketing</a></li>
-          <li><a href="#">Ad Copy</a></li>
-        </ul>
+        <a href="#" class="dropbtn">More</a>
+        <div class="dropdown-content">
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="login.html">Login</a>
+          <a href="guides.html">Guides</a>
+        </div>
       </li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="blog.html" class="active-link">Blog</a></li>
-      <li><a href="login.html">Login</a></li>
       <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
     </ul>
   </nav>
-
-  <main class="blog-main" style="padding: 6rem 2rem 2rem; max-width: 900px; margin: 0 auto;">
+  <section class="blog-hero">
     <h1>Insights from Jasper</h1>
     <p>Discover how AI can transform your content creation.</p>
-
-    <article class="blog-post">
-      <h2>AI Writing Tips</h2>
-      <p><em>Published on April 1, 2025</em></p>
-      <p>Learn how to use AI effectively to boost your writing productivity and creativity.</p>
-      <a href="#" class="read-more">Read More &rarr;</a>
-    </article>
-
-    <article class="blog-post">
-      <h2>Boosting Productivity with Jasper</h2>
-      <p><em>Published on April 5, 2025</em></p>
-      <p>Discover ways to maximize your workflow and get more done with AI assistance.</p>
-      <a href="#" class="read-more">Read More &rarr;</a>
-    </article>
-
-    <article class="blog-post">
-      <h2>Content Strategy for AI Users</h2>
-      <p><em>Published on April 10, 2025</em></p>
-      <p>Plan your content like a pro with AI tools and smart strategies.</p>
-      <a href="#" class="read-more">Read More &rarr;</a>
-    </article>
-  </main>
-
+  </section>
+  <section class="blog-posts">
+    <div class="posts">
+      <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+        <img src="assets/images/ai-writing-tips.jpg" alt="AI Writing Tips Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=AI+Writing+Tips" alt="Fallback AI Writing Tips" class="post-thumbnail-fallback" style="display:none;">
+        <h2>AI Writing Tips</h2>
+        <p>Learn how to use AI effectively. <time datetime="2025-04-01">Published on April 1, 2025</time>.</p>
+        <button class="post-btn">Read More</button>
+      </article>
+      <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+        <img src="assets/images/productivity.jpg" alt="Boosting Productivity Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=Boosting+Productivity" alt="Fallback Boosting Productivity" class="post-thumbnail-fallback" style="display:none;">
+        <h2>Boosting Productivity with Jasper</h2>
+        <p>Discover ways to maximize your workflow. <time datetime="2025-04-05">Published on April 5, 2025</time>.</p>
+        <button class="post-btn">Read More</button>
+      </article>
+      <article class="post animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
+        <img src="assets/images/content-strategy.jpg" alt="Content Strategy Thumbnail" class="post-thumbnail" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="https://via.placeholder.com/300x200?text=Content+Strategy" alt="Fallback Content Strategy" class="post-thumbnail-fallback" style="display:none;">
+        <h2>Content Strategy for AI Users</h2>
+        <p>Plan your content like a pro with AI tools. <time datetime="2025-04-10">Published on April 10, 2025</time>.</p>
+        <button class="post-btn">Read More</button>
+      </article>
+    </div>
+  </section>
+  <section class="feedback">
+    <h2>Leave Feedback</h2>
+    <form id="feedback-form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="comment">Comment:</label><br>
+      <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+      <button type="submit" class="feedback-btn">Submit Feedback</button>
+    </form>
+    <div id="feedback-message"></div>
+  </section>
   <footer class="footer">
-    <p>© 2025 Jasper. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Jasper</h4>
+        <p>AI that helps you create content faster.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">What's New</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="guides.html">Guides</a>
+        <a href="#">Help Center</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Jasper. All rights reserved.</p>
+    </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

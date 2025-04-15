@@ -1,245 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jasper AI - AI Writing Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* Minimal CSS for layout and video background */
-    body, html {
-      margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: #fff; background: #000;
-      height: 100%;
-      overflow-x: hidden;
-    }
-    .navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; background: rgba(0,0,0,0.7); position: fixed; width: 100%; top: 0; z-index: 10;
-    }
-    .navbar .logo {
-      font-weight: 600; font-size: 1.5rem; cursor: pointer;
-    }
-    .nav-links {
-      list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;
-    }
-    .nav-links li a {
-      color: #fff; text-decoration: none; font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links li a:hover {
-      color: #ff5722;
-    }
-    .cta-btn {
-      background: #ff5722; padding: 0.5rem 1rem; border-radius: 4px; color: #fff; font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .cta-btn:hover {
-      background: #e64a19;
-    }
-    .hero {
-      position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 0 1rem;
-      z-index: 1;
-    }
-    .hero-video {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
-    }
-    .video-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); z-index: 0;
-    }
-    .hero h1 {
-      font-size: 3rem; max-width: 700px; margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    .hero p {
-      font-size: 1.25rem; max-width: 600px; margin-bottom: 2rem;
-      font-weight: 400;
-    }
-    .hero-buttons {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    }
-    .secondary-btn {
-      background: transparent; border: 2px solid #ff5722; color: #ff5722; padding: 0.5rem 1.5rem; border-radius: 4px;
-      cursor: pointer; font-weight: 600;
-      display: flex; align-items: center; gap: 0.5rem;
-      transition: background 0.3s, color 0.3s;
-    }
-    .secondary-btn:hover {
-      background: #ff5722; color: #fff;
-    }
-    .hero-note {
-      margin-top: 1rem; font-size: 0.9rem; color: #ccc;
-    }
-    .trusted-by {
-      margin: 3rem auto; max-width: 900px; text-align: center; color: #bbb;
-      font-weight: 600; letter-spacing: 2px;
-    }
-    .logo-grid {
-      display: flex; justify-content: center; gap: 3rem; margin-top: 1rem; flex-wrap: wrap;
-      color: #fff; font-weight: 600; font-size: 1.1rem;
-    }
-    .features {
-      background: #111; padding: 3rem 1rem; text-align: center;
-    }
-    .features h2 {
-      font-size: 2rem; margin-bottom: 2rem;
-    }
-    .feature-cards {
-      display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
-    }
-    .feature-card {
-      background: #222; padding: 1.5rem; border-radius: 8px; width: 250px;
-      box-shadow: 0 0 10px rgba(255,87,34,0.3);
-      transition: transform 0.3s;
-    }
-    .feature-card:hover {
-      transform: translateY(-10px);
-    }
-    .feature-card i {
-      font-size: 2.5rem; color: #ff5722; margin-bottom: 1rem;
-    }
-    .feature-card h3 {
-      margin-bottom: 0.5rem;
-    }
-    .testimonials {
-      background: #000; padding: 3rem 1rem; text-align: center; color: #eee;
-    }
-    .testimonials h2 {
-      font-size: 2rem; margin-bottom: 2rem;
-    }
-    .testimonial-carousel {
-      max-width: 700px; margin: 0 auto; position: relative;
-    }
-    .testimonial {
-      display: none; font-style: italic; font-size: 1.1rem;
-    }
-    .testimonial.active {
-      display: block;
-    }
-    .testimonial span {
-      display: block; margin-top: 1rem; font-weight: 600; font-style: normal;
-    }
-    .carousel-prev, .carousel-next {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: transparent; border: none; color: #ff5722; font-size: 2rem; cursor: pointer;
-      user-select: none;
-    }
-    .carousel-prev {
-      left: -40px;
-    }
-    .carousel-next {
-      right: -40px;
-    }
-    .cta-section {
-      background: #ff5722; color: #fff; padding: 3rem 1rem; text-align: center;
-    }
-    .cta-section h2 {
-      font-size: 2rem; margin-bottom: 1rem;
-    }
-    .cta-section p {
-      margin-bottom: 2rem;
-    }
-    .footer {
-      background: #111; color: #666; padding: 2rem 1rem; text-align: center; font-size: 0.9rem;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .feature-cards {
-        flex-direction: column; align-items: center;
-      }
-      .feature-card {
-        width: 90%;
-      }
-      .nav-links {
-        display: none;
-      }
-      .menu-toggle {
-        display: block; cursor: pointer; color: #fff;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasper AI - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <video autoplay muted loop id="background-video">
+    <source src="https://videos.pexels.com/video-files/856956/856956-hd_1920_1080_25fps.mp4" type="video/mp4">
+    <img src="https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg" alt="Fallback image" class="fallback-image">
+  </video>
   <nav class="navbar">
     <div class="logo">Jasper</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#">Blog Writing</a></li>
-          <li><a href="#">Social Media</a></li>
-          <li><a href="#">Email Marketing</a></li>
-          <li><a href="#">Ad Copy</a></li>
-        </ul>
+        <a href="#" class="dropbtn">More</a>
+        <div class="dropdown-content">
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Blog</a>
+          <a href="login.html">Login</a>
+          <a href="guides.html">Guides</a>
+        </div>
       </li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li class="dropdown language-switcher">
+        <a href="#" class="dropbtn">Language: English</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="es">Español</a>
+        </div>
+      </li>
       <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
     </ul>
   </nav>
-
   <section class="hero">
-    <video autoplay loop muted playsinline class="hero-video" poster="assets/images/hero-fallback.jpg">
-      <source src="assets/videos/hero-video.mp4" type="video/mp4" />
+    <video autoplay loop muted class="hero-video" onerror="this.style.display='none';document.querySelector('.fallback-image').style.display='block'">
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <img src="https://via.placeholder.com/1920x1080?text=Hero+Image" alt="Hero Fallback" class="fallback-image" style="display:none; width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;">
     <div class="video-overlay"></div>
-    <div class="hero-content">
-      <h1>AI Writing Assistant for <span id="typewriter"></span></h1>
-      <p>Create content 10x faster with AI that writes like you.</p>
-      <div class="hero-buttons">
-        <a href="signup.html" class="cta-btn">Start Writing Free <i class="fas fa-arrow-right"></i></a>
-        <button class="secondary-btn demo-btn"><i class="fas fa-play-circle"></i> Watch Demo</button>
+    <div class="hero-content animate__animated animate__fadeIn">
+      <h1>Write Better Content with AI</h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay: 0.3s;">Create blog posts, social media, and more 10x faster with Jasper.</p>
+      <div class="hero-buttons animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
+        <a href="signup.html" class="cta-btn">Start Free Trial</a>
+        <button class="secondary-btn demo-btn">Watch Demo</button>
       </div>
-      <p class="hero-note">No credit card required</p>
     </div>
   </section>
-
   <section class="trusted-by">
-    <p>TRUSTED BY LEADING COMPANIES</p>
+    <p class="trusted-by-label">TRUSTED BY 100,000+ TEAMS WORLDWIDE</p>
     <div class="logo-grid">
-      <div class="logo-item">IBM</div>
       <div class="logo-item">Airbnb</div>
-      <div class="logo-item">Zoom</div>
+      <div class="logo-item">Spotify</div>
       <div class="logo-item">HubSpot</div>
+      <div class="logo-item">Intercom</div>
+      <div class="logo-item">Pinterest</div>
     </div>
   </section>
-
   <section class="features">
-    <h2>Why Choose Jasper?</h2>
+    <h2 class="section-title">Why Choose Jasper?</h2>
     <div class="feature-cards">
-      <div class="feature-card">
+      <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
         <i class="fas fa-bolt"></i>
         <h3>10x Faster</h3>
         <p>Create content in minutes, not hours.</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-bullseye"></i>
-        <h3>On-Brand Content</h3>
-        <p>Maintain your voice across channels.</p>
+      <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+        <i class="fas fa-star"></i>
+        <h3>Premium Quality</h3>
+        <p>Human-like writing at scale.</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Better Results</h3>
-        <p>Content that performs better.</p>
+      <div class="feature-card animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Brand Consistent</h3>
+        <p>Maintain your unique voice.</p>
       </div>
     </div>
   </section>
-
+  <section class="use-cases">
+    <h2 class="section-title">What Can You Create?</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <i class="fas fa-pencil-alt"></i>
+        <h3>Blog Posts</h3>
+        <p>Create engaging articles that rank.</p>
+      </div>
+      <div class="use-case-card">
+        <i class="fab fa-instagram"></i>
+        <h3>Social Media</h3>
+        <p>Craft posts that drive engagement.</p>
+      </div>
+      <div class="use-case-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Marketing Copy</h3>
+        <p>Write ads that convert.</p>
+      </div>
+      <div class="use-case-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Emails</h3>
+        <p>Send emails people want to read.</p>
+      </div>
+    </div>
+  </section>
   <section class="testimonials">
-    <h2>What Our Customers Say</h2>
+    <h2 class="section-title">What Our Customers Say</h2>
     <div class="testimonial-carousel">
       <div class="testimonial active">
         <p>"Jasper cut our content creation time by 80% while improving quality."</p>
@@ -249,171 +120,76 @@
         <p>"The AI writes better than most freelancers we've worked with."</p>
         <span>— Mark T., Startup Founder</span>
       </div>
-      <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-      <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <h2>Ready to create amazing content?</h2>
-    <p>Join thousands of marketers creating content with Jasper.</p>
-    <a href="signup.html" class="cta-btn">Try Jasper Free</a>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Jasper. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Typewriter effect for hero headline
-    const words = ["Marketing Teams", "Content Creators", "Entrepreneurs", "Businesses"];
-    let i = 0;
-    const typewriterEl = document.getElementById("typewriter");
-
-    function typeWriter() {
-      typewriterEl.textContent = words[i];
-      i = (i + 1) % words.length;
-    }
-    typeWriter();
-    setInterval(typeWriter, 2500);
-
-    // Simple dropdown toggle for mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Testimonial carousel
-    const testimonials = document.querySelectorAll('.testimonial');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    let currentTestimonial = 0;
-
-    function showTestimonial(index) {
-      testimonials.forEach((t, i) => {
-        t.classList.toggle('active', i === index);
-      });
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jasper AI - AI Writing Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">Jasper</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#">Blog Writing</a></li>
-          <li><a href="#">Social Media</a></li>
-          <li><a href="#">Email Marketing</a></li>
-          <li><a href="#">Ad Copy</a></li>
-        </ul>
-      </li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="signup.html" class="cta-btn">Try for Free</a></li>
-    </ul>
-  </nav>
-
-  <section class="hero">
-    <video autoplay loop muted playsinline class="hero-video" poster="assets/images/hero-fallback.jpg">
-      <source src="assets/videos/hero-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-    <div class="hero-content">
-      <h1>AI Writing Assistant for <span id="typewriter"></span></h1>
-      <p>Create content 10x faster with AI that writes like you.</p>
-      <div class="hero-buttons">
-        <a href="signup.html" class="cta-btn">Start Writing Free <i class="fas fa-arrow-right"></i></a>
-        <button class="secondary-btn demo-btn"><i class="fas fa-play-circle"></i> Watch Demo</button>
-      </div>
-      <p class="hero-note">No credit card required</p>
-    </div>
-  </section>
-
-  <section class="trusted-by">
-    <p>TRUSTED BY LEADING COMPANIES</p>
-    <div class="logo-grid">
-      <div class="logo-item">IBM</div>
-      <div class="logo-item">Airbnb</div>
-      <div class="logo-item">Zoom</div>
-      <div class="logo-item">HubSpot</div>
-    </div>
-  </section>
-
-  <section class="features">
-    <h2>Why Choose Jasper?</h2>
-    <div class="feature-cards">
-      <div class="feature-card">
-        <i class="fas fa-bolt"></i>
-        <h3>10x Faster</h3>
-        <p>Create content in minutes, not hours.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-bullseye"></i>
-        <h3>On-Brand Content</h3>
-        <p>Maintain your voice across channels.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Better Results</h3>
-        <p>Content that performs better.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-carousel">
-      <div class="testimonial active">
-        <p>"Jasper cut our content creation time by 80% while improving quality."</p>
-        <span>— Sarah K., Marketing Director</span>
-      </div>
       <div class="testimonial">
-        <p>"The AI writes better than most freelancers we've worked with."</p>
-        <span>— Mark T., Startup Founder</span>
+        <p>"We've doubled our content output with the same team size."</p>
+        <span>— Jennifer L., Content Manager</span>
       </div>
       <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
       <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
-
   <section class="cta-section">
     <h2>Ready to create amazing content?</h2>
-    <p>Join thousands of marketers creating content with Jasper.</p>
+    <p>Join thousands of marketers and entrepreneurs creating content with Jasper.</p>
     <a href="signup.html" class="cta-btn">Try Jasper Free</a>
   </section>
-
   <footer class="footer">
-    <p>© 2025 Jasper. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Jasper</h4>
+        <p>AI that helps you create content faster.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">What's New</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="guides.html">Guides</a>
+        <a href="#">Help Center</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Jasper. All rights reserved.</p>
+    </div>
   </footer>
-
+  <div class="chat-widget">
+    <div class="chat-icon"><i class="fas fa-comment"></i></div>
+    <div class="chat-box">
+      <div class="chat-header">
+        <h4>Chat with Jasper</h4>
+        <span class="close-chat"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="chat-body">
+        <div class="chat-messages">
+          <div class="message bot"><p>Hi there! How can I help you today?</p></div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Type your message...">
+          <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

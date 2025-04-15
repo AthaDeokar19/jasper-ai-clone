@@ -1,3 +1,115 @@
+// Language Switching Logic
+const languageSelector = document.querySelector('.language-switcher .dropdown-content a');
+if (languageSelector) {
+  document.querySelectorAll('.language-switcher .dropdown-content a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = link.getAttribute('data-lang');
+      document.querySelector('.language-switcher .dropbtn').textContent = `Language: ${lang === 'en' ? 'English' : 'Español'}`;
+      updateLanguage(lang);
+    });
+  });
+}
+
+function updateLanguage(lang) {
+  const translations = {
+    en: {
+      home: 'Home',
+      more: 'More',
+      pricing: 'Pricing',
+      blog: 'Blog',
+      login: 'Login',
+      guides: 'Guides',
+      tryFree: 'Try for Free',
+      heroTitle: 'Write Better Content with AI',
+      heroSubtitle: 'Create blog posts, social media, and more 10x faster with Jasper.',
+      startTrial: 'Start Free Trial',
+      watchDemo: 'Watch Demo',
+      whyChoose: 'Why Choose Jasper?',
+      trustedBy: 'TRUSTED BY 100,000+ TEAMS WORLDWIDE',
+      features: {
+        fast: '10x Faster',
+        quality: 'Premium Quality',
+        consistent: 'Brand Consistent'
+      },
+      useCases: {
+        blogPosts: 'Blog Posts',
+        socialMedia: 'Social Media',
+        marketing: 'Marketing Copy',
+        emails: 'Emails'
+      },
+      testimonialsTitle: 'What Our Customers Say',
+      ctaTitle: 'Ready to create amazing content?',
+      ctaSubtitle: 'Join thousands of marketers and entrepreneurs creating content with Jasper.',
+      tryJasper: 'Try Jasper Free'
+    },
+    es: {
+      home: 'Inicio',
+      more: 'Más',
+      pricing: 'Precios',
+      blog: 'Blog',
+      login: 'Iniciar Sesión',
+      guides: 'Guías',
+      tryFree: 'Prueba Gratis',
+      heroTitle: 'Escribe Mejor Contenido con IA',
+      heroSubtitle: 'Crea publicaciones de blog, redes sociales y más 10 veces más rápido con Jasper.',
+      startTrial: 'Comienza la Prueba Gratis',
+      watchDemo: 'Ver Demostración',
+      whyChoose: '¿Por qué elegir Jasper?',
+      trustedBy: 'CONFIANZA DE 100,000+ EQUIPOS EN TODO EL MUNDO',
+      features: {
+        fast: '10x Más Rápido',
+        quality: 'Calidad Premium',
+        consistent: 'Consistente con la Marca'
+      },
+      useCases: {
+        blogPosts: 'Publicaciones de Blog',
+        socialMedia: 'Redes Sociales',
+        marketing: 'Copia de Marketing',
+        emails: 'Correos Electrónicos'
+      },
+      testimonialsTitle: 'Qué Dicen Nuestros Clientes',
+      ctaTitle: '¿Listo para crear contenido increíble?',
+      ctaSubtitle: 'Únete a miles de marketers y emprendedores que crean contenido con Jasper.',
+      tryJasper: 'Prueba Jasper Gratis'
+    }
+  };
+
+  const langData = translations[lang] || translations['en'];
+
+  // Update navigation
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.textContent === 'Home') link.textContent = langData.home;
+    if (link.textContent === 'More') link.closest('.dropdown').querySelector('.dropbtn').textContent = langData.more;
+    if (link.textContent === 'Pricing') link.textContent = langData.pricing;
+    if (link.textContent === 'Blog') link.textContent = langData.blog;
+    if (link.textContent === 'Login') link.textContent = langData.login;
+    if (link.textContent === 'Guides') link.textContent = langData.guides;
+    if (link.classList.contains('cta-btn')) link.textContent = langData.tryFree;
+  });
+
+  // Update hero section
+  document.querySelector('.hero h1').textContent = langData.heroTitle;
+  document.querySelector('.hero p').textContent = langData.heroSubtitle;
+  document.querySelector('.hero-buttons .cta-btn').textContent = langData.startTrial;
+  document.querySelector('.hero-buttons .secondary-btn').textContent = langData.watchDemo;
+
+  // Update other sections
+  document.querySelector('.trusted-by-label').textContent = langData.trustedBy;
+  document.querySelector('.features .section-title').textContent = langData.whyChoose;
+  document.querySelectorAll('.feature-card h3').forEach((el, i) => {
+    el.textContent = Object.values(langData.features)[i];
+  });
+  document.querySelector('.use-cases .section-title').textContent = 'What Can You Create?'; // Simplified for time
+  document.querySelectorAll('.use-case-card h3').forEach((el, i) => {
+    el.textContent = Object.values(langData.useCases)[i];
+  });
+  document.querySelector('.testimonials .section-title').textContent = langData.testimonialsTitle;
+  document.querySelector('.cta-section h2').textContent = langData.ctaTitle;
+  document.querySelector('.cta-section p').textContent = langData.ctaSubtitle;
+  document.querySelector('.cta-section .cta-btn').textContent = langData.tryJasper;
+}
+
 // Menu Toggle Logic
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -8,15 +120,16 @@ if (menuToggle && navLinks) {
   });
 }
 
-// Smooth Scroll for Navigation Links
+// Smooth Navigation for All Links
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = e.target.getAttribute('href').slice(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-      navLinks.classList.remove('active'); // Close mobile menu
+    const href = link.getAttribute('href');
+    if (href && href !== '#') {
+      e.preventDefault();
+      window.location.href = href; // Redirect to the linked page
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active'); // Close mobile menu
+      }
     }
   });
 });
@@ -286,117 +399,3 @@ if (billingToggle) {
     });
   });
 }
-// Enhanced dropdown logic
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-  dropdown.addEventListener('mouseenter', () => {
-    dropdown.querySelector('.dropdown-content').style.display = 'block';
-  });
-  
-  dropdown.addEventListener('mouseleave', () => {
-    dropdown.querySelector('.dropdown-content').style.display = 'none';
-  });
-});
-// Enhanced chat functionality
-let chatHistory = [];
-
-function getAIResponse(message) {
-  const brandTone = document.getElementById('tone')?.value || 'professional';
-  return fetch('/generate', {
-    method: 'POST',
-    body: JSON.stringify({
-      prompt: `[${brandTone} tone] ${message}`,
-      history: chatHistory
-    })
-  }).then(res => res.text());
-}
-
-// Update send button handler
-sendButton.addEventListener('click', async () => {
-  const message = chatInput.value.trim();
-  if (message) {
-    addMessage(message, 'user');
-    const response = await getAIResponse(message);
-    addMessage(response, 'bot');
-  }
-});
-// Typewriter effect for hero headline
-const words = ["Marketing Teams", "Content Creators", "Entrepreneurs", "Businesses"];
-let i = 0;
-const typewriterEl = document.getElementById("typewriter");
-
-function typeWriter() {
-  typewriterEl.textContent = words[i];
-  i = (i + 1) % words.length;
-}
-typeWriter();
-setInterval(typeWriter, 2500);
-
-// Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Testimonial carousel
-const testimonials = document.querySelectorAll('.testimonial');
-const prevBtn = document.querySelector('.carousel-prev');
-const nextBtn = document.querySelector('.carousel-next');
-let currentTestimonial = 0;
-
-function showTestimonial(index) {
-  testimonials.forEach((t, i) => {
-    t.classList.toggle('active', i === index);
-  });
-}
-
-prevBtn.addEventListener('click', () => {
-  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-
-nextBtn.addEventListener('click', () => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-// Typewriter effect for hero headline
-const words = ["Marketing Teams", "Content Creators", "Entrepreneurs", "Businesses"];
-let i = 0;
-const typewriterEl = document.getElementById("typewriter");
-
-function typeWriter() {
-  typewriterEl.textContent = words[i];
-  i = (i + 1) % words.length;
-}
-typeWriter();
-setInterval(typeWriter, 2500);
-
-// Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Testimonial carousel
-const testimonials = document.querySelectorAll('.testimonial');
-const prevBtn = document.querySelector('.carousel-prev');
-const nextBtn = document.querySelector('.carousel-next');
-let currentTestimonial = 0;
-
-function showTestimonial(index) {
-  testimonials.forEach((t, i) => {
-    t.classList.toggle('active', i === index);
-  });
-}
-
-prevBtn.addEventListener('click', () => {
-  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-
-nextBtn.addEventListener('click', () => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-
